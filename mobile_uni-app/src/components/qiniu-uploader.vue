@@ -22,7 +22,8 @@
                 {{uploadMap[index].progress + '%'}}
               </view>
               <view class="cu-progress round sm">
-                <view class="bg-green" :style="[{ width: uploadMap[index].progress + '%' }]"></view>
+                <view class="bg-green" :style="[{ width: uploadMap[index].progress + '%' }]">
+                </view>
               </view>
             </view>
           </view>

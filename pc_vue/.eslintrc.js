@@ -3,6 +3,7 @@ module.exports = {
 
   env: {
     node: true,
+    es2022: true, // 👈 add this
   },
 
   extends: [
@@ -25,7 +26,4 @@ module.exports = {
     _: true,
   },
 
-  parserOptions: {
-    parser: 'babel-eslint',
-  },
 };
