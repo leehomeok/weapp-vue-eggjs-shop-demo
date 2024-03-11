@@ -85,7 +85,9 @@
         const params = this.mx_getTableParams();
         params.filter = this.filter;
         const res = await this.$api.merchant.query(params);
-        this.mx_setTableData(res);
+        console.log('res', res)
+        await this.mx_setTableData(res);
+        this.$forceUpdate()
       },
     },
   };

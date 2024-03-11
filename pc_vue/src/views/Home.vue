@@ -95,7 +95,7 @@
 
 <script>
   import { pageMixin } from '../utils/mixins/common';
-
+import _ from 'lodash'
   export default {
     name: 'home',
     mixins: [pageMixin],

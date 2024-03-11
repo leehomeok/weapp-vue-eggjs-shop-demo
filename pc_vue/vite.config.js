@@ -24,7 +24,11 @@ export default defineConfig({
   },
   server: {
     proxy:{
-      '/api': 'http://localhost:7001', // 反向代理
+      '/api': {
+        target:'http://localhost:7001', // 反向代理
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
     },
     open: true, // 自动打开浏览器
   },

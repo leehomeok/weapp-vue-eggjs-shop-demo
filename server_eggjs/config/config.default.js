@@ -114,7 +114,6 @@ module.exports = appInfo => {
       name: 'session', // specific instance `session` as the session store
     },
 
-    // jwt
     jwt: {
       secret: '123456',
       // ignore: '/weapp',

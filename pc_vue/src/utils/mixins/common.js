@@ -1,6 +1,6 @@
 // 混合
 import { mapState } from 'vuex';
-
+import _ from 'lodash';
 // page
 export const pageMixin = {
   data() {
@@ -104,12 +104,16 @@ export const tableMixin = {
     // 默认表格不需要在每个页面单独处理
     mx_defaultTableData() {
       const table = this.mx_getTargetTable();
+      console.log('table', table);
       return (table && table.rows) || [];
     },
     mx_defaultPagination() {
       const table = this.mx_getTargetTable();
       return (table && table.pagination) || {};
     },
+    tableKey(){
+      return `${this.$options.name}Table`;
+    }
   },
   methods: {
     // 设置ajax获取的表格数据
@@ -120,6 +124,7 @@ export const tableMixin = {
         targetTable.pagination.count = data.count;
         targetTable.pagination.page = data.page;
         targetTable.rows = data.rows;
+        this.$set(this.mx_tableMap[this.tableKey], 'rows', data.rows);
       }
     },
     // 获取表格查询条件

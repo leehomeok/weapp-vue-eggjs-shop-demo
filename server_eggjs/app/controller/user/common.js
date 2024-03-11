@@ -24,7 +24,7 @@ class UserCommonController extends Controller {
       // 根据userName获取商家
       user = await ctx.service.user.merchant.getMerchantByLogin(userName, password);
     }
-
+    console.log('user:', user)
     if (app._.isEmpty(user)) {
       return this.fail(ctx.ERROR_CODE, '账号或密码错误');
     }
